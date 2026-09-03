@@ -200,6 +200,9 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
   .hero__inner { grid-template-columns: 1fr; gap: 26px; }
   /* en una sola columna no tiene sentido fijar el formulario */
   .hero__form { position: static; }
+  /* en movil recortamos info que solo estaba para darle altura a la columna del formulario */
+  .hero__trust-list li:nth-child(n+5) { display: none; }
+  .hero__experience { display: none; }
 }
 
 @media (max-width: 640px) {
