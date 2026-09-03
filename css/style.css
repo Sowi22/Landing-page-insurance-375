@@ -141,30 +141,33 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 .hero__stats svg { width: 18px; height: 18px; }
 .hero__stats strong { font-size: 14.5px; font-weight: 600; color: var(--dark); }
 
-/* FORMULARIO: se queda visible mientras se hace scroll por la información de la izquierda */
+/* FORMULARIO: fijo del lado derecho, ocupa toda la altura visible de la pantalla */
 .hero__form {
   min-width: 0; background: #fff; border: 1px solid var(--border); border-radius: 22px;
-  padding: 30px; padding-top: 34px; box-shadow: 0 30px 70px rgba(13,35,24,.10); overflow: hidden;
-  transition: box-shadow .3s ease, transform .3s ease;
+  padding: 30px; padding-top: 34px; box-shadow: 0 30px 70px rgba(13,35,24,.10);
+  transition: box-shadow .3s ease;
   position: sticky; top: 24px;
+  height: calc(100vh - 48px);
+  display: flex; flex-direction: column;
+  overflow: hidden;
 }
 .hero__form::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
   background: linear-gradient(90deg, var(--accent), var(--highlight), var(--accent-light));
   background-size: 200% auto; animation: shimmer-sweep 5s linear infinite;
 }
-.hero__form:hover { box-shadow: 0 34px 80px rgba(13,35,24,.14); transform: translateY(-2px); }
-.hero__form .eyebrow { color: var(--accent-dark); }
-.hero__form h2 { font-size: clamp(20px, 1vw + 16px, 24px); margin-bottom: 18px; }
+.hero__form:hover { box-shadow: 0 34px 80px rgba(13,35,24,.14); }
+.hero__form .eyebrow { color: var(--accent-dark); flex-shrink: 0; }
+.hero__form h2 { font-size: clamp(20px, 1vw + 16px, 24px); margin-bottom: 18px; flex-shrink: 0; }
 
 .hs-form-container {
   position: relative; border-radius: 14px;
-  border: 1px solid var(--border); max-height: 340px; overflow-y: auto; overflow-x: hidden;
-  scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-alt);
+  border: 1px solid var(--border); overflow: hidden;
+  flex: 1 1 auto; min-height: 0;
 }
 .hs-form-frame iframe { width: 100%; border: none; display: block; }
 
-.contact__trust { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+.contact__trust { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
 .contact__trust span { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--text-muted); }
 .contact__trust svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
 
@@ -190,6 +193,10 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .hero__inner { grid-template-columns: 1fr; gap: 26px; }
+  /* en una sola columna no tiene sentido fijar el formulario a toda la pantalla;
+     ahí sí necesita su propio scroll para poder llenarlo completo */
+  .hero__form { position: static; height: auto; }
+  .hs-form-container { max-height: 420px; overflow-y: auto; }
 }
 
 @media (max-width: 640px) {
