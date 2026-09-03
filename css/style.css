@@ -141,15 +141,12 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 .hero__stats svg { width: 18px; height: 18px; }
 .hero__stats strong { font-size: 14.5px; font-weight: 600; color: var(--dark); }
 
-/* FORMULARIO: fijo del lado derecho, ocupa toda la altura visible de la pantalla */
+/* FORMULARIO: fijo del lado derecho, se muestra completo (sin recortar ni hacer scroll) */
 .hero__form {
   min-width: 0; background: #fff; border: 1px solid var(--border); border-radius: 22px;
   padding: 30px; padding-top: 34px; box-shadow: 0 30px 70px rgba(13,35,24,.10);
   transition: box-shadow .3s ease;
   position: sticky; top: 24px;
-  height: calc(100vh - 48px);
-  display: flex; flex-direction: column;
-  overflow: hidden;
 }
 .hero__form::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
@@ -157,28 +154,26 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
   background-size: 200% auto; animation: shimmer-sweep 5s linear infinite;
 }
 .hero__form:hover { box-shadow: 0 34px 80px rgba(13,35,24,.14); }
-.hero__form .eyebrow { color: var(--accent-dark); flex-shrink: 0; }
-.hero__form h2 { font-size: clamp(20px, 1vw + 16px, 24px); margin-bottom: 18px; flex-shrink: 0; }
+.hero__form .eyebrow { color: var(--accent-dark); }
+.hero__form h2 { font-size: clamp(20px, 1vw + 16px, 24px); margin-bottom: 18px; }
 
-.hs-form-container {
-  position: relative; border-radius: 14px;
-  border: 1px solid var(--border); overflow: hidden;
-  flex: 1 1 auto; min-height: 0;
-}
+.hs-form-container { position: relative; border-radius: 14px; border: 1px solid var(--border); }
 .hs-form-frame iframe { width: 100%; border: none; display: block; }
 
-.contact__trust { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
-.contact__trust span { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--text-muted); }
+.contact__trust { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.contact__trust span { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--text-muted); flex-wrap: wrap; }
 .contact__trust svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+.contact__trust a { color: var(--accent-dark); text-decoration: underline; }
+.contact__trust a:hover { color: var(--accent); }
 
-/* CARRUSEL "POR QUÉ ELEGIRNOS" */
+/* "POR QUÉ ELEGIRNOS" */
 .hero__trust { min-width: 0; }
 .hero__trust-title { font-weight: 700; font-size: 14.5px; color: var(--dark); margin-bottom: 14px; }
 .hero__trust-list {
   list-style: none; display: flex; flex-direction: column;
   border: 1px solid var(--border); border-radius: 18px; background: #fff; overflow: hidden;
 }
-.hero__trust-list li { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-bottom: 1px solid var(--border); transition: background .2s ease; }
+.hero__trust-list li { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; border-bottom: 1px solid var(--border); transition: background .2s ease; }
 .hero__trust-list li:hover { background: var(--bg-alt); }
 .hero__trust-list li:last-child { border-bottom: none; }
 .hero__trust-list li:nth-child(1) { transition-delay: .05s; }
@@ -187,16 +182,24 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 .hero__trust-list li:nth-child(4) { transition-delay: .2s; }
 .hero__trust-list li:nth-child(5) { transition-delay: .25s; }
 .hero__trust-list li:nth-child(6) { transition-delay: .3s; }
-.hero__trust-num { font-size: 12.5px; font-weight: 800; color: var(--highlight); flex-shrink: 0; }
-.hero__trust-item-title { font-size: 13.5px; font-weight: 600; color: var(--dark); }
+.hero__trust-num { font-size: 12.5px; font-weight: 800; color: var(--highlight); flex-shrink: 0; margin-top: 1px; }
+.hero__trust-item-title { display: block; font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
+.hero__trust-list li p { font-size: 13px; color: var(--text-muted); }
+
+/* DÉCADAS DE EXPERIENCIA */
+.hero__experience {
+  display: flex; align-items: flex-start; gap: 18px;
+  border: 1px solid var(--border); border-radius: 18px; background: #fff; padding: 22px;
+}
+.hero__experience-num { font-size: clamp(30px, 2vw + 20px, 40px); font-weight: 800; color: var(--accent); flex-shrink: 0; line-height: 1; }
+.hero__experience-title { font-size: 14.5px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.hero__experience-text { font-size: 13px; color: var(--text-muted); }
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .hero__inner { grid-template-columns: 1fr; gap: 26px; }
-  /* en una sola columna no tiene sentido fijar el formulario a toda la pantalla;
-     ahí sí necesita su propio scroll para poder llenarlo completo */
-  .hero__form { position: static; height: auto; }
-  .hs-form-container { max-height: 420px; overflow-y: auto; }
+  /* en una sola columna no tiene sentido fijar el formulario */
+  .hero__form { position: static; }
 }
 
 @media (max-width: 640px) {
