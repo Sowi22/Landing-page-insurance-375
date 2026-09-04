@@ -1,7 +1,7 @@
 ﻿:root {
   --bg: #ffffff;
   /* PRUEBA: verde mate/sage (antes: esmeralda #10B981, verde del logo #00953B, verde neon #00C853) */
-  --bg-alt: #e3ede6;
+  --bg-alt: #c3ddcd;
   --accent: #4E8368;
   --accent-rgb: 78,131,104;
   --accent-dark: #365C48;
@@ -9,6 +9,7 @@
   --highlight: #F47600;
   --highlight-light: #ffb347;
   --dark: #0d2318;
+  --logo-green: #00953B;
   --text: #1C1F1E;
   --text-muted: #5B6560;
   --border: #dcefe3;
@@ -42,7 +43,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   margin-bottom: 10px;
 }
 
-h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; color: var(--dark); }
+h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; color: var(--logo-green); }
 
 /* Texto con brillo animado, como el acento de la landing anterior */
 .accent {
