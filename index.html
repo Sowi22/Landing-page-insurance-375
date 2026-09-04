@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estrella Insurance 375 | Seguros con Descuento en Brandon, FL</title>
-<meta name="description" content="Estrella Insurance 375 en Brandon, FL. Ahorra en tu seguro de auto, hogar y más. Agente: Daniel Geraldino. Llama (813) 656-9375.">
+<title id="pageTitle">Estrella Insurance 375 | Seguros con Descuento en Brandon, FL</title>
+<meta name="description" id="pageDescription" content="Estrella Insurance 375 en Brandon, FL. Ahorra en tu seguro de auto, hogar y más. Agente: Daniel Geraldino. Llama (813) 656-9375.">
 <link rel="icon" href="assets/logo/estrella-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,18 @@
 </head>
 <body>
 
+<!-- SELECTOR DE IDIOMA (se muestra solo la primera vez) -->
+<div class="lang-gate" id="langGate">
+  <div class="lang-card">
+    <img src="assets/logo/estrella-logo.png" alt="Estrella Insurance 375">
+    <p class="lang-card__title">Selecciona tu idioma <span>/</span> Select your language</p>
+    <div class="lang-card__btns">
+      <button type="button" class="lang-btn" data-lang="es">Español</button>
+      <button type="button" class="lang-btn" data-lang="en">English</button>
+    </div>
+  </div>
+</div>
+
 <!-- HERO + FORM -->
 <section class="hero" id="inicio">
   <div class="hero__glow" aria-hidden="true"></div>
@@ -20,62 +32,65 @@
   <div class="container">
     <div class="hero__top reveal">
       <img class="hero__logo" src="assets/logo/estrella-logo.png" alt="Estrella Insurance 375">
-      <span class="hero__badge"><span class="hero__badge-dot"></span>Agencia local en Brandon, FL</span>
+      <span class="hero__badge"><span class="hero__badge-dot"></span><span data-i18n="badge">Agencia local en Brandon, FL</span></span>
+      <button type="button" class="lang-toggle" id="langToggle" aria-label="Cambiar idioma / Switch language">
+        <span data-i18n="lang-toggle-label">EN</span>
+      </button>
     </div>
 
     <div class="hero__inner">
       <div class="hero__left">
         <div class="hero__text">
           <p class="eyebrow reveal reveal--d1">Estrella Insurance 375 &mdash; Brandon, FL</p>
-          <h1 class="reveal reveal--d2">Ahorra en tu seguro con <span class="accent">descuento</span> real.</h1>
-          <p class="hero__sub reveal reveal--d3">Comparamos aseguradoras para darte la tarifa más baja en auto, hogar, negocio y más. Rápido, fácil y en español.</p>
+          <h1 class="reveal reveal--d2" data-i18n-html="hero-h1">Ahorra en tu seguro con <span class="accent">descuento</span> real.</h1>
+          <p class="hero__sub reveal reveal--d3" data-i18n="hero-sub">Comparamos aseguradoras para darte la tarifa más baja en auto, hogar, negocio y más. Rápido, fácil y en español.</p>
 
           <ul class="hero__stats">
             <li class="reveal">
               <span class="hero__stats-icon"><svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.4 8.7-7 10-3.6-1.3-7-5-7-10V6z"/></svg></span>
-              <strong>Agentes licenciados</strong>
+              <strong data-i18n="stat-1">Agentes licenciados</strong>
             </li>
             <li class="reveal">
               <span class="hero__stats-icon"><svg viewBox="0 0 24 24"><path d="M12 15a5 5 0 100-10 5 5 0 000 10zM8.5 14L7 22l5-3 5 3-1.5-8"/></svg></span>
-              <strong>+40 años de experiencia</strong>
+              <strong data-i18n="stat-2">+40 años de experiencia</strong>
             </li>
             <li class="reveal">
               <span class="hero__stats-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
-              <strong>Atención en español e inglés</strong>
+              <strong data-i18n="stat-3">Atención en español e inglés</strong>
             </li>
             <li class="reveal">
               <span class="hero__stats-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>
-              <strong>Cobertura el mismo día</strong>
+              <strong data-i18n="stat-4">Cobertura el mismo día</strong>
             </li>
           </ul>
         </div>
 
         <div class="hero__trust">
-          <p class="hero__trust-title">¿Por qué elegir Estrella Insurance 375?</p>
+          <p class="hero__trust-title" data-i18n="trust-title">¿Por qué elegir Estrella Insurance 375?</p>
           <ul class="hero__trust-list">
             <li class="reveal">
               <span class="hero__trust-num">01</span>
-              <div><span class="hero__trust-item-title">Agentes licenciados en Brandon</span><p>Entienden los requisitos de seguros de tu zona y te asesoran con conocimiento local.</p></div>
+              <div><span class="hero__trust-item-title" data-i18n="trust-1-title">Agentes licenciados en Brandon</span><p data-i18n="trust-1-text">Entienden los requisitos de seguros de tu zona y te asesoran con conocimiento local.</p></div>
             </li>
             <li class="reveal">
               <span class="hero__trust-num">02</span>
-              <div><span class="hero__trust-item-title">Comparamos aseguradoras al instante</span><p>Capacidad de cotizar con múltiples compañías a la vez, sin que tengas que hacerlo tú mismo.</p></div>
+              <div><span class="hero__trust-item-title" data-i18n="trust-2-title">Comparamos aseguradoras al instante</span><p data-i18n="trust-2-text">Capacidad de cotizar con múltiples compañías a la vez, sin que tengas que hacerlo tú mismo.</p></div>
             </li>
             <li class="reveal">
               <span class="hero__trust-num">03</span>
-              <div><span class="hero__trust-item-title">Explicaciones claras, sin presión</span><p>Te mostramos las opciones de forma honesta, para que decidas con confianza.</p></div>
+              <div><span class="hero__trust-item-title" data-i18n="trust-3-title">Explicaciones claras, sin presión</span><p data-i18n="trust-3-text">Te mostramos las opciones de forma honesta, para que decidas con confianza.</p></div>
             </li>
             <li class="reveal">
               <span class="hero__trust-num">04</span>
-              <div><span class="hero__trust-item-title">Tarifas con descuento a tu medida</span><p>Aplicamos todos los descuentos disponibles según tu situación específica.</p></div>
+              <div><span class="hero__trust-item-title" data-i18n="trust-4-title">Tarifas con descuento a tu medida</span><p data-i18n="trust-4-text">Aplicamos todos los descuentos disponibles según tu situación específica.</p></div>
             </li>
             <li class="reveal">
               <span class="hero__trust-num">05</span>
-              <div><span class="hero__trust-item-title">Atención rápida, el mismo día</span><p>Cobertura de auto, inquilinos y motocicleta desde el momento en que se aprueba.</p></div>
+              <div><span class="hero__trust-item-title" data-i18n="trust-5-title">Atención rápida, el mismo día</span><p data-i18n="trust-5-text">Cobertura de auto, inquilinos y motocicleta desde el momento en que se aprueba.</p></div>
             </li>
             <li class="reveal">
               <span class="hero__trust-num">06</span>
-              <div><span class="hero__trust-item-title">Apoyo de tu comunidad local</span><p>Un equipo que vive y trabaja en Brandon, no un call center a distancia.</p></div>
+              <div><span class="hero__trust-item-title" data-i18n="trust-6-title">Apoyo de tu comunidad local</span><p data-i18n="trust-6-text">Un equipo que vive y trabaja en Brandon, no un call center a distancia.</p></div>
             </li>
           </ul>
         </div>
@@ -83,15 +98,15 @@
         <div class="hero__experience reveal">
           <div class="hero__experience-num">40+</div>
           <div>
-            <p class="hero__experience-title">Décadas de experiencia nacional respaldando tu oficina local</p>
-            <p class="hero__experience-text">Estrella Insurance ha servido a millones de familias en todo el país con coberturas económicas, con descuento y al mejor precio.</p>
+            <p class="hero__experience-title" data-i18n="exp-title">Décadas de experiencia nacional respaldando tu oficina local</p>
+            <p class="hero__experience-text" data-i18n="exp-text">Estrella Insurance ha servido a millones de familias en todo el país con coberturas económicas, con descuento y al mejor precio.</p>
           </div>
         </div>
       </div>
 
       <div class="hero__form reveal" id="contacto">
-        <p class="eyebrow">Empieza a ahorrar</p>
-        <h2>Cotización gratis</h2>
+        <p class="eyebrow" data-i18n="form-eyebrow">Empieza a ahorrar</p>
+        <h2 data-i18n="form-title">Cotización gratis</h2>
 
         <div class="hs-form-container">
           <script src="https://js.hsforms.net/forms/embed/51900706.js" defer></script>
@@ -99,8 +114,8 @@
         </div>
 
         <div class="contact__trust">
-          <span><svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.4 8.7-7 10-3.6-1.3-7-5-7-10V6z"/></svg>Tus datos están protegidos. <a href="https://www.estrellainsurance.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
-          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3.5 3.5"/></svg>Respuesta rápida garantizada.</span>
+          <span><svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.4 8.7-7 10-3.6-1.3-7-5-7-10V6z"/></svg><span data-i18n="privacy-text">Tus datos están protegidos.</span> <a href="https://www.estrellainsurance.com/privacy" target="_blank" rel="noopener" data-i18n="privacy-link">Política de privacidad</a></span>
+          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3.5 3.5"/></svg><span data-i18n="fast-response">Respuesta rápida garantizada.</span></span>
         </div>
       </div>
     </div>

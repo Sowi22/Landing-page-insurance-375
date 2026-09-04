@@ -110,6 +110,43 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 }
 @media (prefers-reduced-motion: reduce) { .hero__badge-dot { animation: none; } }
 
+/* Botón para cambiar de idioma (arriba a la derecha) */
+.lang-toggle {
+  position: absolute; top: 4px; right: 0;
+  background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.6); border-radius: 999px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  padding: 8px 16px; font-family: var(--sans); font-size: 12.5px; font-weight: 700; color: var(--accent-dark);
+  cursor: pointer; transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 20px rgba(13,35,24,.08);
+}
+.lang-toggle:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(13,35,24,.12); }
+
+/* Pantalla de selección de idioma (solo la primera vez) */
+.lang-gate {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(13,35,24,.55);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  padding: 20px;
+  opacity: 1; transition: opacity .3s ease;
+}
+.lang-gate.is-hidden { opacity: 0; pointer-events: none; }
+.lang-card {
+  background: #fff; border-radius: 24px; padding: 40px 32px;
+  max-width: 380px; width: 100%; text-align: center;
+  box-shadow: 0 40px 90px rgba(0,0,0,.3);
+}
+.lang-card img { height: 44px; margin: 0 auto 22px; }
+.lang-card__title { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 22px; }
+.lang-card__title span { color: var(--text-muted); }
+.lang-card__btns { display: flex; gap: 12px; }
+.lang-btn {
+  flex: 1; padding: 14px 10px; border-radius: 999px; border: 2px solid var(--border);
+  background: #fff; font-family: var(--sans); font-weight: 700; font-size: 14.5px; color: var(--dark);
+  cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+}
+.lang-btn:hover { border-color: var(--accent); color: var(--accent-dark); background: var(--bg-alt); transform: translateY(-1px); }
+
 .hero__inner {
   position: relative; z-index: 1;
   display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: start;
