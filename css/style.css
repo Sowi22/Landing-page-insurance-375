@@ -1,10 +1,11 @@
 ﻿:root {
   --bg: #ffffff;
-  --bg-alt: #d2f5e0;
-  --accent: #00C853;
-  --accent-rgb: 0,200,83;
-  --accent-dark: #078a44;
-  --accent-light: #5fe897;
+  /* PRUEBA: verde mate/sage (antes: esmeralda #10B981, verde del logo #00953B, verde neon #00C853) */
+  --bg-alt: #e3ede6;
+  --accent: #4E8368;
+  --accent-rgb: 78,131,104;
+  --accent-dark: #365C48;
+  --accent-light: #8fb89c;
   --highlight: #F47600;
   --highlight-light: #ffb347;
   --dark: #0d2318;
