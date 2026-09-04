@@ -199,7 +199,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 .contact__trust a { color: var(--accent-dark); text-decoration: underline; }
 .contact__trust a:hover { color: var(--accent); }
 
-/* "POR QUÃ‰ ELEGIRNOS" */
+/* "POR QUÉ ELEGIRNOS" */
 .hero__trust { min-width: 0; }
 .hero__trust-title { font-weight: 700; font-size: 14.5px; color: var(--dark); margin-bottom: 14px; }
 .hero__trust-list {
@@ -219,7 +219,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 .hero__trust-item-title { display: block; font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
 .hero__trust-list li p { font-size: 13px; color: var(--text-muted); }
 
-/* DÃ‰CADAS DE EXPERIENCIA */
+/* DÉCADAS DE EXPERIENCIA */
 .hero__experience {
   display: flex; align-items: flex-start; gap: 18px;
   border: 1px solid var(--border); border-radius: 18px; background: #fff; padding: 22px;
@@ -227,6 +227,21 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.15; colo
 .hero__experience-num { font-size: clamp(30px, 2vw + 20px, 40px); font-weight: 800; color: var(--accent); flex-shrink: 0; line-height: 1; }
 .hero__experience-title { font-size: 14.5px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
 .hero__experience-text { font-size: 13px; color: var(--text-muted); }
+
+/* RESEÑAS REALES DE GOOGLE */
+.hero__reviews {
+  border: 1px solid var(--border); border-radius: 18px; background: #fff; padding: 22px;
+}
+.hero__reviews-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; font-size: 14px; font-weight: 700; color: var(--dark); }
+.hero__reviews-stars { color: #F5B301; font-size: 16px; letter-spacing: 1px; }
+.hero__reviews-list { display: flex; flex-direction: column; gap: 14px; }
+.hero__review { border-left: 3px solid var(--accent); padding-left: 14px; }
+.hero__review p { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 6px; }
+.hero__review cite { font-size: 12px; font-weight: 700; color: var(--accent-dark); font-style: normal; }
+
+@media (max-width: 640px) {
+  .hero__reviews-list { gap: 12px; }
+}
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
